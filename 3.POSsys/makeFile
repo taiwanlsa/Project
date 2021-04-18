@@ -1,0 +1,5 @@
+all:
+	gcc -o  POSsys.c POSsys
+
+clean:
+	rm POSsys
