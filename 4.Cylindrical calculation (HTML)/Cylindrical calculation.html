@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Week1_review</title>
+    <meta charset="utf-8">
+    <!-- 預設打開的版面大小conten 寬度  initial scale 比例 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 網站icon -->
+     <link rel="shortcut Icon" type="image/x-icon" href="https://winaero.com/blog/wp-content/uploads/2019/10/Windows-10-Calculator-Fluent-Icon-Big-256.png">
+    <!-- 進場炫砲特效-->
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- 響應式網站插件 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <style>
+      
+      body {
+        background-color: #2f3437 !important;
+        font-size:15px;
+        color:white;
+        text-align: center;
+
+      }
+
+/*      div{
+        display: 'inline-block';
+      }*/
+
+
+      header {
+        background-color: #264649;
+        height:30px;
+      }
+
+      nav {
+        background-color: #3f4447;
+        height:40px;
+        text-align: right;
+      }
+
+      section {
+        background-color: #3f4447; 
+        height:200px;
+        margin-top: 5px;
+        color: white;
+      }
+
+      article{
+        /*background-color: #f4a261; */
+        /*height: 100%;*/
+        text-align: center !important;
+      }
+
+      form{
+        /*width:400px;*/
+        /*height:200px;*/
+        /*text-align: center;*/
+        /*background-color: white;*/
+
+      }
+
+
+      aside{
+        background-color: #f1faee;
+        /*height:100%;*/
+        margin-left: -12px;
+        margin-top: 5px ;
+        color:black;
+        text-align:left;
+      }
+
+      footer {
+        background-color: #3f4447; 
+        height:30px;
+      }
+
+      #calculate_button{
+        /*width:250px;*/
+        /*margin-left: 12px;*/
+
+      }
+
+      #message_box{
+        font-size:20px;
+
+      }
+
+      #table01{
+        /*margin:20px;*/
+      }
+
+      
+    </style>
+
+  </head>
+  <body>
+    <!-- 多了fluid保留的網頁邊界較少，可以用的頁面就比較多 -->    
+    <div class = 'container-fluid'>
+
+      <!-- header -->
+      <header>
+        <marquee scrollamount='40' onMouseOver = "this.stop();" onMouseOut = "this.start();">圓柱計算機</marquee>
+      </header>
+
+      <!-- nav -->
+      <nav id = 'nav'>
+
+
+
+        <!-- 響應式網站插件2-->
+        <!-- 以下能維持原件互動性 -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
+        <!-- 進場特效 -->
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+        <script>
+         Hyperlink('首頁沒作用','沒作用按鈕2','寶可夢圖鑑測試失敗3','test fail');
+
+         function Hyperlink(h1,h2,h3,h4)
+         {
+          var n, target, text;
+          var btn;
+          
+          text = [h1, h2, h3, h4];
+          console.log(text);
+
+          for (n = 1; n < 5; n++ )
+          {
+            
+            btn = document.createElement('button');
+            btn.id = 'button' + n;
+            btn.innerHTML = text[n-1];
+            btn.type = 'button';
+            btn.classList.add('btn');
+            btn.classList.add('btn-outline-secondary');
+            // btn.margin = 10;
+            // btn.href =(text[n-1] + ".html");
+            btn.onclick = "window.location.href='"+ text[n-1] + "';" ;
+
+            // btn.
+            target = document.getElementById('nav');
+
+            target.append(btn);
+
+          } 
+
+
+         }
+
+
+        </script>
+
+
+        
+       
+        
+      </nav> 
+
+
+
+
+      <!-- 中間切版 -->
+      <div class='row'>        
+        <div id ='left_part' class='col-lg-9 col-md-10'>
+
+          <!-- section -->
+          <section>
+            
+            <p style="font-weight:bold;font-size: 20px" >🕵️‍♂️計算圓柱體🕵️‍♂️</p>
+
+            <!-- 表單 -->      
+            <div class='container-fluid'>
+              <form id= 'form01'>
+                <div class="row">
+                    <div id= 'left_part' class='col-md-4 col-sm-6'>
+                      <!-- 半徑輸入框 -->
+                      <div class="input-group inout-group-lg">                  
+                        <span class='input-group-text' id = "label01">半徑</span>
+                        <input type="text" name ="radius_text" id= "radius_text" class = 'form-control' placeholder= '請輸入多少公分' aria-describedby='basic-addon1'>
+                        <span class='input-group-text' id = "label01">cm</span>
+                      </div>                      
+                    </div>
+
+                    <div class='col-md-4  col-sm-6'>
+                      <!-- 高度輸入框 -->
+                      <div class= "input-group inout-group-lg">             
+                        <span class='input-group-text' id = "label01">高度</span>
+                        <input type="text" name ="height_text" id="height_text" class = 'form-control' placeholder= '請輸入多少公分' aria-describedby='basic-addon1'>
+                        <span class='input-group-text' id = "label01">cm</span>
+                      </div>                      
+                    </div>
+
+                    <!-- 計算按鈕 -->
+                    <button type="button" class="btn btn-primary col-md-4" name="calculate_button" id="calculate_button">點我計算結果</button>
+                </div>
+              </form>
+            </div>
+
+          </section>
+
+          <!-- article -->
+          <article>
+
+            <div style='width:500px; height:30px;'>
+              <marquee scrollamount='10' behavior='alternate' onMouseOver = "this.stop();" onMouseOut = "this.start();">計算結果顯示區</marquee>
+            </div>
+
+            <!-- 結果顯示表格 -->
+            <table id='table01' class='table table-dark '>
+              <tr>
+                <th scope='col'>高度</th>
+                <th scope='col'>半徑</th>
+                <th scope='col'>表面積</th>
+                <th scope='col'>體積</th>  
+                <th scope='col'>展開圖週長</th>  
+              </tr>
+            </table>
+
+          </article>
+
+        </div>    
+
+
+        <!-- aside -->
+        <aside class = 'col-lg-3 col-md-2'>
+          
+          <div id = "message_box"></div>
+          
+
+        </aside>     
+      </div>
+      
+      <!-- footer -->
+      <footer>footer</footer>
+
+
+    </div>
+
+
+
+
+    
+  
+
+    <!-- js撰寫區 -->
+    <script>
+      // calculate_button.onclick =calculate;
+
+      $("#form01").effect('slide', {direction: 'up', distance: 50}, 1000);
+      
+      calculate_button.addEventListener('click', calculate);
+
+      $(calculate_button).click(
+        function() {$(table01).effect( "shake")});
+
+      function calculate()
+      {
+        var radius, height;
+        var cylinder_volime, cylinder_siface_area, cylinder_Expand_view_Perimeter;
+
+        radius = Number(radius_text.value);
+        height = Number(height_text.value);
+        cylinder_Expand_view_Perimeter = 2 * Math.PI * radius * height
+
+        if (event.target.id = 'calculate_button')
+        {
+
+          if(isNaN(radius) || isNaN(height)){
+            alert("請輸入數字，謝謝");
+          }
+          else if((radius < 0) ||  (height < 0)){
+            alert("我無法理解負數的圓柱長怎樣，麻煩輸入正數");
+          }
+
+          else{
+            // 計算體積
+            cylinder_volime = 2 * Math.PI * radius ** 2 + 2 * Math.PI * radius * height;
+
+            // 計算表面積
+            cylinder_siface_area = 2 * Math.PI * radius ** 2 + 2 * Math.PI * radius * height;
+
+            // 計算展開圖周長
+            cylinder_Expand_view_Perimeter = 2 * cylinder_Expand_view_Perimeter + cylinder_Expand_view_Perimeter * height;
+
+            console.log("測試");
+
+            // alert("計算中，來賓請掌聲鼓勵!!!");
+
+            message_box.innerHTML = `半徑為${radius}cm<br>高度為${height}cm之 圓柱體 <br><br> 其　　體積為:${cylinder_volime.toFixed(3)} cm<br> 其　表面積為:${cylinder_siface_area.toFixed(4)} cm<br>展開圖周長為:${cylinder_Expand_view_Perimeter.toFixed(3)}`;
+
+            // 插入table01計算結果
+            table01.innerHTML += `
+                <tr>
+                  <td scope='row'>${height}</td>
+                  <td>${radius}</td>
+                  <td>${cylinder_siface_area.toFixed(4)}</td>
+                  <td>${cylinder_volime.toFixed(3)}</td>
+                  <td>${cylinder_Expand_view_Perimeter.toFixed(3)}</td>
+                </tr>
+
+                `;
+
+          }
+
+
+
+
+        }
+      }
+
+
+    </script>
+
+
+
+
+</body>
+</html>

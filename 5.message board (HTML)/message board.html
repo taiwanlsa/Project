@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 要改!! -->
+  <link rel="shortcut Icon" type="image/x-icon" href="images\ico\iconfinder_car_1055099.ico">
+
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet" >
+  <title>week2驗收時間－留言板</title>
+
+  <style>
+    
+    body{
+      background-color: black;
+      text-align: center;
+      color: white;
+    }
+
+
+    h2{
+      color: white;
+    }
+
+    #massege_text{
+      width: 300px;
+      height:120px;
+      background-color: gray;
+    }
+
+
+  </style>
+
+
+</head>
+<body>
+  <h2>留言板</h2>
+
+  <form id = 'form01'>
+    <div class = 'row'>
+      <div class= 'col-md-5'>
+        <div class="input-group mb-3">
+          <!-- 第一欄位 -->
+          <span class="input-group-text"  id="basic-addon1">電子信箱</span>
+          <input id = 'mail_text' name = 'mail_text' type="text" class="form-control" placeholder="請輸入gmail" aria-label="請輸入gmail" aria-describedby="basic-addon2">
+          <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+        </div>
+      </div>
+
+
+      <div class = 'col-md-5'>
+        <!-- 第二欄位 -->
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">你的暱稱</span>
+          <input id = 'nickname_text' name = 'nickname_text' type="text" class="form-control" placeholder="炫砲的名稱" aria-label="炫砲的名稱" aria-describedby="basic-addon2">
+        </div>
+      </div>
+
+    </div>
+
+    
+    <marquee id = 'marquee'></marquee>
+    <p></p>
+    <textarea id = 'massege_text' name='massege_text' ></textarea>
+    <p></p>
+
+        <!-- 按鈕1 -->
+    <button id = 'start_message_button' type="button" class="btn btn-warning">留言預覽</button>
+
+    
+      <!-- 按鈕二 -->
+
+    <button id = 'upload_message_button' type="button" class="btn btn-warning">資料確認，開始留言</button>
+
+    
+
+    <button id = 'select_message_button' type="button" class="btn btn-warning">查看留言</button>
+     <!-- 應該之後會改成直接顯示全部的的留言，並做個留言的頁數選擇 -->
+
+    <div id = 'msg01' name= 'msg01'> </div>
+
+
+
+
+
+
+
+
+  </form>
+
+
+
+
+
+  <!-- 特效用 -->
+  <script src="js/jquery-1.12.4.js"></script>
+  <script src="js/jquery-ui.js"></script>
+
+  <!-- 響應式網站用 -->
+  <script src="js/popper.min.js" ></script>
+  <script src="js/bootstrap.min.js"></script>
+
+
+
+
+  <script>
+    start_message_button.addEventListener('click', massege_test)
+    select_message_button.addEventListener('click', search_massege)
+
+    function search_massege(event){
+
+      
+      
+    }
+
+
+    function massege_test(){
+      var nickname, mail, message;
+
+      nickname = nickname_text.value;
+      mail = mail_text.value;  
+      massege = massege_text.value;
+
+      msg01.innerHTML = 
+      `
+      您的暱稱：${nickname}<br>
+      您的email：${mail}@gamil.com<br>
+      您的留言：${massege}<br>`;
+    }
+    
+  </script>
+
+</body>
+</html>
